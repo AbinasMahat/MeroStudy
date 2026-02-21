@@ -1,0 +1,2 @@
+# MeroStudy
+Result Management System
