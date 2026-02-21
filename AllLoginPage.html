@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Educational Login with OTP</title>
+    <link rel="stylesheet" href="AllLoginPage.css">
+</head>
+<body>
+
+    <div id="authContainer">
+        <!-- Login / Signup Form -->
+        <form id="authForm">
+            <div class="imgcontainer">
+                <img src="https://www.w3schools.com/howto/img_avatar2.png" alt="Avatar" class="avatar">
+            </div>
+
+            <div class="container">
+                <label for="email"><b>Email</b></label>
+                <input type="email" placeholder="Enter Email" id="email" required>
+
+                <label for="password"><b>Password</b></label>
+                <input type="password" placeholder="Enter Password (for login)" id="password">
+
+                <button type="button" id="loginBtn" onclick="handleLogin()">Login</button>
+                <button type="button" id="signupBtn" onclick="startSignup()">Sign Up</button>
+                <button type="button" id="forgotBtn" onclick="startForgotPassword()">Forgot Password?</button>
+
+                <div id="otpSection" style="display:none; margin-top:15px;">
+                    <label for="otp"><b>Enter OTP (sent to email)</b></label>
+                    <input type="text" placeholder="6-digit OTP" id="otp" maxlength="6">
+                    <button type="button" onclick="verifyOTP()">Verify OTP</button>
+                </div>
+
+                <div id="newPasswordSection" style="display:none; margin-top:15px;">
+                    <label for="newPassword"><b>Set New Password (8-20 chars)</b></label>
+                    <input type="password" placeholder="New Password" id="newPassword">
+                    <button type="button" onclick="setPassword()">Set Password</button>
+                </div>
+
+                <label>
+                    <input type="checkbox" checked="checked" name="remember"> Remember me
+                </label>
+            </div>
+
+            <div class="container" style="background-color:#f1f1f1">
+                <button type="button" class="cancelbtn" onclick="resetForm()">Cancel</button>
+            </div>
+        </form>
+    </div>
+
+    <!-- Role-based Dashboards (same as before) -->
+    <div id="SuperAdminDashboard" class="dashboard">
+        <h2>Super Admin Dashboard</h2>
+        <p>Welcome, Super Admin. You have full access.</p>
+        <!-- Add user form here if needed -->
+        <button onclick="logout()">Logout</button>
+    </div>
+
+    <div id="AdminDashboard" class="dashboard">
+        <h2>Admin Dashboard</h2>
+        <p>Welcome, Admin.</p>
+        <button onclick="logout()">Logout</button>
+    </div>
+
+    <div id="TeacherDashboard" class="dashboard">
+        <h2>Teacher Dashboard</h2>
+        <p>Welcome, Teacher. View subjects and update marks.</p>
+        <button onclick="logout()">Logout</button>
+    </div>
+
+    <div id="StudentDashboard" class="dashboard">
+        <h2>Student Dashboard</h2>
+        <p>Welcome, Student. View your academic data.</p>
+        <button onclick="logout()">Logout</button>
+    </div>
+
+    <script src="AllLoginPage.js"></script>
+</body>
+</html>
